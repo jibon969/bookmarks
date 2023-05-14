@@ -10,6 +10,7 @@ from .forms import (
     ProfileEditForm
 )
 
+
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -26,7 +27,8 @@ def user_login(request):
                 return HttpResponse('Invalid login')
     else:
         form = LoginForm()
-    return render(request, 'account/login.html', {'form': form})
+    context = {'form': form}
+    return render(request, 'account/login.html', context)
 
 
 @login_required
@@ -47,7 +49,10 @@ def register(request):
             return render(request, 'account/registration/register_done.html', {'new_user': new_user})
     else:
         user_form = UserRegistrationForm()
-    return render(request, 'account/registration/register.html', {'user_form': user_form})
+    context = {
+        'user_form': user_form
+    }
+    return render(request, 'account/registration/register.html', context)
 
 
 @login_required
@@ -62,4 +67,8 @@ def edit(request):
     else:
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)
-    return render(request, 'account/registration/edit.html', {'user_form': user_form, 'profile_form': profile_form})
+    context = {
+        'user_form': user_form,
+        'profile_form': profile_form
+    }
+    return render(request, 'account/registration/edit.html', context)
