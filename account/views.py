@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .forms import LoginForm, UserRegistrationForm
-from .forms import LoginForm, UserRegistrationForm, \
- UserEditForm, ProfileEditForm
+from .forms import (
+    LoginForm,
+    UserRegistrationForm,
+    UserEditForm,
+    ProfileEditForm
+)
 
 
 @login_required
