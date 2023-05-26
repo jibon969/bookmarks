@@ -6,7 +6,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
@@ -19,6 +18,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -65,11 +68,11 @@ WSGI_APPLICATION = 'bookmarks.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test_db',              # Database Name
-        'USER': 'postgres',             # User Name
-        'PASSWORD': 'root',             # Password for Postgresql
-        'HOST': '127.0.0.1',            # Django Server
-        'PORT': '5432',                 # default port for Postgresql
+        'NAME': 'test_db',  # Database Name
+        'USER': 'postgres',  # User Name
+        'PASSWORD': 'root',  # Password for Postgresql
+        'HOST': '127.0.0.1',  # Django Server
+        'PORT': '5432',  # default port for Postgresql
     }
 }
 
@@ -115,5 +118,3 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-
-
