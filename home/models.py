@@ -13,6 +13,7 @@ class Department(models.Model):
 class Student(models.Model):
     name = models.CharField(max_length=120)
     roll = models.PositiveIntegerField()
+    dept = models.ForeignKey(Department, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
 
