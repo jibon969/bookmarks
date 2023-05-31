@@ -9,6 +9,7 @@ ALLOWED_HOSTS = []
 # Application definition
 INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
+    'images.apps.ImagesConfig',
     'home.apps.HomeConfig',
     'contacts.apps.ContactsConfig',
     'django.contrib.admin',
@@ -17,7 +18,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',
     'django_extensions',
 ]
 
