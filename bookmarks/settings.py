@@ -8,7 +8,6 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
-    'accounts.apps.AccountsConfig',
     'images.apps.ImagesConfig',
     'home.apps.HomeConfig',
     'contacts.apps.ContactsConfig',
@@ -18,7 +17,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions',
 ]
 
 LOGIN_REDIRECT_URL = 'dashboard'
@@ -112,10 +110,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-AUTHENTICATION_BACKENDS = [
-       'django.contrib.auth.backends.ModelBackend',
-       'account.authentication.EmailAuthBackend',
-]
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
