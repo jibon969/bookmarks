@@ -22,7 +22,7 @@
             </li>
         </ul>
     {% endif %}
-        <span class="user">
+    <span class="user">
          {% if request.user.is_authenticated %}
              Hello {{ request.user.first_name }},
              <a href="{% url "logout" %}">Logout</a>
